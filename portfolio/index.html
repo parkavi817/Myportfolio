@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkavi V - Portfolio</title>
+    <link rel="stylesheet" href="portstyle.css">
+    <link rel="stylesheet" href="https://unpkg.com/lucide-icons/dist/umd/lucide-icons.min.css">
+    <style>
+        /* Add styles for responsiveness and mobile menu toggle */
+        #menuButton {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            #navLinks {
+                display: none;
+            }
+            #menuButton {
+                display: block;
+                background: plum;
+                padding: 10px;
+                cursor: pointer;
+            }
+            #navLinks.active {
+                display: block;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: plum;
+                width: 200px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: lightblue;">
+
+<!-- Navbar -->
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-300" style="background-color: plum; height: 70px;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 10px;">
+        <div class="flex items-center justify-between h-full">
+            <div class="hidden md:flex space-x-8" id="navLinks">
+                <button onclick="window.location.href='#about'" class="nav-button">About</button>
+                <button onclick="window.location.href='#skills'" class="nav-button">Skills</button>
+                <button onclick="window.location.href='#projects'" class="nav-button">Projects</button>
+                <button onclick="window.location.href='#contact'" class="nav-button">Contact</button>
+            </div>
+            <button id="menuButton" class="md:hidden">&#9776;</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div class="container text-center">
+        <h1 class="text-5xl font-bold mb-4">Hi, I'm <span class="text-blue-400">Parkavi V</span></h1>
+        <h2 class="text-2xl mb-8">Full Stack Developer & Cybersecurity Enthusiast</h2>
+        
+        <div class="flex justify-center gap-4 mt-8">
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+            <a href="myresume.pdf" type="application/pdf" class="btn btn-outline" download>My Resume</a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div>
+                <p class="text-lg mb-6">
+                    Hi! I'm passionate about full-stack development, cybersecurity, and Power BI. My journey in <br>
+                    tech has been marked by continuous learning through various certifications and hands-on <br>projects.
+                </p>
+                <ul class="certification-list">
+                    <li>Cisco Certifications: Cybersecurity, Networking Essentials, Packet Tracer</li>
+                    <li>Cloud Computing by NPTEL</li>
+                    <li>Blockchain Basics by Great Learning</li>
+                    <li>Data Analysis with Python by freeCodeCamp</li>
+                </ul>
+            </div>
+            <div>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-50">
+    <div class="container">
+        <h2 class="section-title">Skills & Expertise</h2>
+        <div id="skillsGrid" class="skills-grid">
+            <!-- Skills will be populated by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-20">
+    <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div id="projectsGrid" class="projects-grid">
+            <!-- Projects will be populated by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+    <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Contact Information -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                <div class="space-y-4">
+                    <p><strong>Email:</strong> <a href="mailto:parkaviv.it2023@citchennai.net" class="text-blue-500">parkaviv.it2023@citchennai.net</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+917418482141" class="text-blue-500">+91 7418482141</a></p>
+                    <p><strong>Location:</strong> Kanchipuram, Tamil Nadu</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms configuration -->
+                <input type="hidden" name="access_key" value="5b80ef89-8fef-42bd-a1f6-572943eb61d1">
+                <input type="hidden" name="subject" value="New Contact Form Submission">
+                <input type="hidden" name="from_name" value="Portfolio Website">
+                <input type="hidden" name="recipient_email" value="parkaviv.it2023@citchennai.net">
+
+                <!-- Form Fields -->
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Enter your message"></textarea>
+                </div>
+                <input type="hidden" name="redirect" value="success.html">
+                <button type="submit" class="btn btn-primary w-full">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer style="background-color: plum; padding: 20px; text-align: center;">
+    <div>
+        <img src="https://logosmarcas.net/wp-content/uploads/2020/12/GitHub-Logo-650x366.png" alt="GitHub" id="git" class="logo">
+        <img src="https://img.icons8.com/?size=100&id=98960&format=png&color=1A1A1A" alt="LinkedIn" id="ln" class="logo">
+        <img src="https://img.icons8.com/?size=100&id=PZknXs9seWCp&format=png&color=000000" alt="LeetCode" id="lc" class="logo">
+        <img class="logo" src="https://img.icons8.com/?size=100&id=dz63urxyxSdO&format=png&color=1A1A1A" id="ig" alt="Instagram">
+        <img class="logo" src="gkg.png" id="gkg" alt="GeeksforGeeks">
+        <img class="logo" src="https://img.icons8.com/?size=100&id=4z2zrIWYmGqx&format=png&color=1A1A1A" id="cc" alt="CodeChef">
+    </div>
+</footer>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/7418482141" target="_blank" style="position: fixed; bottom: 20px; right: 20px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 50px; height: 50px;">
+</a>
+
+<script>
+    // Toggle for mobile menu
+    document.getElementById("menuButton").addEventListener("click", () => {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("active");
+    });
+
+    // Footer Social Links
+    document.addEventListener("DOMContentLoaded", () => {
+        const links = {
+            git: "https://github.com/parkavi817",
+            ln: "https://www.linkedin.com/in/parkavi-v-it-141323290/",
+            lc: "https://leetcode.com/u/parkavi_02/",
+            ig: "https://www.instagram.com/parkss_here_02/",
+            gkg: "https://www.geeksforgeeks.org/user/parkavivninu/",
+            cc: "https://www.codechef.com/users/parkaviv"
+        };
+        Object.keys(links).forEach(id => {
+            document.getElementById(id).addEventListener("click", () => {
+                window.open(links[id], "_blank");
+            });
+        });
+    });
+
+    let currectUrl=document.URL;
+    console.log(currentUrl)
+</script>
+
+<script src="portfolio.js"></script>
+</body>
+</html>
+
